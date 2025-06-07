@@ -1,0 +1,62 @@
+@use '../abstract' as *;
+
+// *** Why Easybank ***
+.why-easybank {
+  background-color: $color-blue-light;
+
+  @include flex-settings;
+
+  &__container {
+    @include flex-settings(null, null, column, 7.2rem);
+    @include dimension-settings(100%, 110rem);
+  }
+
+  &__content {
+    @include flex-settings(null, null, column, 1.6rem);
+    @include dimension-settings(100%);
+
+    @media (max-width: 1350px) {
+      text-align: center;
+
+      @include flex-settings(center, center, column, 1.6rem);
+    }
+  }
+
+  &__cards {
+    flex-wrap: wrap;
+    @include flex-settings(center, center, null, 2.5rem);
+  }
+
+  &__card {
+    @include flex-settings(null, null, column, 4rem);
+    @include dimension-settings(100%, 25.5rem);
+
+    @media (max-width: 1350px) {
+      text-align: center;
+
+      @include flex-settings(center, center, column, 4rem);
+    }
+
+    &-icon {
+      border-radius: 50%;
+
+      @include dimension-settings($width: 7.2rem, $height: 7.2rem);
+      @include flex-settings;
+    }
+
+    &-content {
+      @include flex-settings(null, null, column, 2.6rem);
+    }
+
+    &-heading {
+      color: $color-blue-dark;
+
+      @include font-settings(2.4rem, 300, 2.8rem, -0.043rem);
+    }
+
+    &-description {
+      @include font-settings(1.6rem, null, 2.6rem, -0.025rem);
+    }
+  }
+}
+// *** End of Why Easybank ***

@@ -1,0 +1,125 @@
+@use '../abstract' as *;
+
+// *** Footer ***
+.footer {
+  background-color: $color-blue-dark;
+
+  padding-inline: 9.5rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  @include dimension-settings(100%, 144rem);
+  @include flex-settings;
+
+  .ultimate-button {
+    justify-self: end;
+
+    @media (max-width: 900px) {
+      justify-self: center;
+    }
+  }
+
+  &__container {
+    display: grid;
+
+    grid-template-columns: minmax(15rem, 25rem) repeat(2, minmax(30rem, 1fr));
+    grid-template-rows: auto auto;
+
+    gap: 2rem;
+
+    @include dimension-settings(100%, 111rem);
+
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+      place-items: center;
+    }
+
+    @media (max-width: 680px) {
+      @include flex-settings(center, center, column, 2rem);
+    }
+  }
+
+  &__logo-path-white {
+    fill: $color-white;
+  }
+
+  &__nav-social {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    align-self: end;
+
+    @media (max-width: 680px) {
+      align-self: center;
+    }
+
+    .footer__nav-list {
+      @include flex-settings(null, null, null, 1.3rem);
+
+      i {
+        @include font-settings(2rem, null);
+      }
+    }
+  }
+
+  &__nav-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    place-self: center stretch;
+
+    @include dimension-settings($height: 100%);
+
+    @media (max-width: 1020px) {
+      place-self: center;
+    }
+
+    @media (max-width: 680px) {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+
+  &__nav-item {
+    margin-bottom: 0.5rem;
+  }
+
+  &__nav-link {
+    &:link,
+    &:visited {
+      color: $color-white;
+      transition: color 0.3s;
+
+      @include font-settings(1.5rem, null, 2.6rem, -0.023rem);
+    }
+
+    &:hover,
+    &:active {
+      color: $color-gradient-green;
+    }
+  }
+
+  &__copyright {
+    color: $color-white;
+
+    grid-column: -2/-1;
+    justify-self: end;
+    align-self: end;
+
+    margin-bottom: 0.5rem;
+
+    opacity: 50%;
+
+    @include font-settings(1.5rem, null, 2.8rem, -0.023rem);
+
+    @media (max-width: 900px) {
+      justify-self: center;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 680px) {
+      align-self: center;
+    }
+  }
+}
+// *** End of Footer ***

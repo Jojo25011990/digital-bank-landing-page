@@ -1,0 +1,100 @@
+@use '../abstract' as *;
+
+// *** Html ***
+html {
+  @media (max-width: 500px) {
+    font-size: 50%;
+  }
+}
+// *** End of Html ***
+
+// *** Body ***
+body {
+  color: $color-gray-dark;
+
+  font-family: 'Public Sans', serif;
+
+  @include font-settings(1.8rem, 400);
+  @include dimension-settings(100%);
+}
+// *** End of Body ***
+
+// *** Container ***
+.container {
+  margin: 0 auto;
+
+  @include flex-settings(null, null, column);
+  @include dimension-settings(100%, 144rem);
+}
+// *** End of Container ***
+
+// *** Main ***
+.main {
+  position: relative;
+
+  overflow-x: hidden;
+
+  @include dimension-settings(100%, 144rem);
+}
+// *** End of Main ***
+
+// *** Sections ***
+.digital-banking,
+.why-easybank,
+.latest-articles {
+  position: relative;
+
+  padding-inline: 9.5rem;
+  padding-top: 9.5rem;
+  padding-bottom: 9.5rem;
+
+  @include dimension-settings(100%);
+}
+// *** End of Sections ***
+
+// *** Heading Secondary ***
+.heading-secondary {
+  color: $color-blue-dark;
+  @include font-settings(4rem, 300, 6.4rem, -0.071rem);
+}
+// *** End of Heading Secondary ***
+
+// *** Description ***
+.description {
+  color: $color-gray-dark;
+
+  margin-bottom: 3.6rem;
+
+  @include font-settings(null, null, 2.8rem, -0.028rem);
+}
+// *** End of Description ***
+
+// *** Ultimate Button Winner ( Alone Button in the page 😂 ) ! ***
+.ultimate-button {
+  &:link,
+  &:visited {
+    color: $color-white;
+
+    background-image: linear-gradient(
+      to right,
+      $color-gradient-green,
+      $color-gradient-cyan
+    );
+
+    border-radius: 2.8rem;
+
+    transition: opacity 0.3s;
+
+    cursor: pointer;
+
+    @include flex-settings(center);
+    @include dimension-settings(16.3rem, null, 4.4rem);
+    @include font-settings(1.4rem, 700, 4.4rem);
+  }
+
+  &:hover,
+  &:active {
+    opacity: 0.7;
+  }
+}
+// *** End of Ultimate Button Winner ( Alone Button in the page 😂 ) ! ***

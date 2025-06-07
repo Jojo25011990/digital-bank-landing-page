@@ -1,0 +1,177 @@
+@use '../abstract' as *;
+
+// *** Header ***
+.header {
+  position: relative;
+  z-index: 999;
+  background-color: $color-white;
+
+  padding-inline: 2rem;
+
+  @include dimension-settings(100%, 144rem, 8rem);
+  @include flex-settings;
+
+  @media (max-width: 765px) {
+    .ultimate-button {
+      display: none;
+    }
+  }
+
+  // *** Container ***
+  &__container {
+    @include dimension-settings(111rem);
+    @include flex-settings(space-between);
+  }
+  // *** End of Container ***
+
+  // *** Navigation Desktop ***
+  &__nav {
+    @media (max-width: 765px) {
+      display: none;
+    }
+  }
+  // *** End of Navigation Desktop ***
+
+  // *** List ***
+  &__list {
+    @include dimension-settings(33.1rem);
+    @include flex-settings(space-between);
+  }
+  // *** End of List ***
+
+  // *** Link ***
+  &__link {
+    &:link,
+    &:visited {
+      position: relative;
+
+      color: $color-gray-dark;
+
+      padding-bottom: 2.8rem;
+
+      @include font-settings(1.4rem, null, null, -0.011rem);
+    }
+
+    &:hover::before,
+    &:active::before {
+      opacity: 1;
+
+      @include dimension-settings(5.1rem);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+
+      background: linear-gradient(
+        to right,
+        $color-gradient-green,
+        $color-gradient-cyan
+      );
+
+      opacity: 0;
+
+      transition: opacity 0.25s ease-in, width 0.25s ease-in;
+
+      @include dimension-settings(0, null, 0.4rem);
+    }
+  }
+  // *** End of Link ***
+
+  // *** Mobile Navigation ***
+  &__nav-mobile-overlay {
+    position: absolute;
+    top: 8rem;
+    left: 0;
+    z-index: 100;
+    transform: translateY(-120%);
+
+    background: linear-gradient(
+      to bottom,
+      rgba($color-blue-dark, 0.7),
+      rgba($color-blue-dark, 0.2)
+    );
+
+    transition: transform 0.5s;
+
+    @include dimension-settings(100%, null, 70rem);
+    @include flex-settings;
+
+    &.active {
+      transform: translateY(0);
+    }
+  }
+
+  &__nav-mobile {
+    @include dimension-settings(30rem);
+    @include flex-settings;
+  }
+
+  &__list-mobile {
+    background-color: $color-blue-light;
+
+    padding: 5rem 2rem;
+
+    @include dimension-settings(100%);
+    @include flex-settings(center, center, column, 4rem);
+  }
+
+  &__link-mobile {
+    color: $color-blue-dark;
+
+    transition: color 0.3s;
+
+    &:hover,
+    &:active {
+      color: $color-gradient-green;
+    }
+  }
+  // *** End of Mobile Navigation ***
+
+  // *** Hamburger & Close Buttons ***
+  &__mobile-menu {
+    position: relative;
+
+    @include flex-settings;
+    @include dimension-settings(2.5rem, null, 2.5rem);
+
+    display: none;
+
+    @media (max-width: 765px) {
+      @include flex-settings(null, null);
+    }
+
+    button {
+      position: absolute;
+
+      cursor: pointer;
+
+      @include dimension-settings(2.5rem, null, 2.5rem);
+    }
+  }
+  &__mobile-hamburger {
+    transition: opacity 1s ease;
+    visibility: visible;
+    opacity: 1;
+
+    &.active {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+  &__mobile-close {
+    transition: opacity 1s ease;
+    visibility: hidden;
+    opacity: 0;
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  // *** End of Hamburger & Close Buttons ***
+}
+// *** End of Header ***

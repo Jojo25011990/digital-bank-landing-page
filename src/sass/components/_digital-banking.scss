@@ -1,0 +1,104 @@
+@use '../abstract' as *;
+
+// *** Digital Banking **
+.digital-banking {
+  position: relative;
+
+  background-color: $color-gray-light;
+
+  padding-right: 0;
+
+  @include flex-settings(null);
+  @include dimension-settings(100%, null, 67.6rem);
+
+  background: url('images/bg-intro-desktop.svg') no-repeat;
+  background-position: 52rem -26rem;
+
+  @media (max-width: 1150px) {
+    background-position: 50% -44vh;
+
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: 0;
+
+    text-align: center;
+
+    order: 2;
+    @include flex-settings($direction: column);
+    @include dimension-settings(100%, null, unset);
+  }
+
+  @media (max-width: 765px) {
+    background-position: 50% -60vh;
+
+    @include flex-settings;
+  }
+
+  @media (max-width: 580px) {
+    background-position: 50% -75vh;
+
+    @include flex-settings;
+  }
+
+  @media (max-width: 470px) {
+    background: url('images/bg-intro-mobile.svg') no-repeat;
+    background-position: 50% -8vh;
+  }
+
+  &__container {
+    @include dimension-settings(100%, 44.7rem);
+
+    @media (max-width: 1150px) {
+      text-align: center;
+
+      order: 2;
+      @include flex-settings($direction: column);
+    }
+  }
+
+  &__heading {
+    color: $color-blue-dark;
+
+    margin-bottom: 2.4rem;
+
+    @include font-settings(5.6rem, 300, 6.4rem, -0.01rem);
+  }
+
+  &__description {
+    color: $color-gray-dark;
+
+    margin-bottom: 3.6rem;
+
+    @include font-settings(null, null, 2.8rem, -0.028rem);
+  }
+
+  &__images {
+    position: absolute;
+    top: -26rem;
+    right: -35rem;
+    z-index: 1;
+
+    @media (max-width: 1150px) {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.mobil-image {
+  position: relative;
+  top: 0;
+  right: -26rem;
+  z-index: 10;
+
+  @media (max-width: 1150px) {
+    right: 0;
+    top: -12rem;
+  }
+
+  @media (max-width: 470px) {
+    top: -4rem;
+  }
+}
+// *** End of Digital Banking ***

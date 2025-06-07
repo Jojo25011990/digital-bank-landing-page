@@ -1,0 +1,55 @@
+@use './variables' as *;
+
+// *** Flexbox Settings ***
+@mixin flex-settings(
+  $justify: center,
+  $align: center,
+  $direction: null,
+  $gap: null
+) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+// *** Font Settings ***
+@mixin font-settings($size, $weight, $line-height: null, $l-spacing: null) {
+  font-size: $size;
+  font-weight: $weight;
+
+  @if $line-height {
+    line-height: $line-height;
+  }
+
+  @if $l-spacing {
+    letter-spacing: $l-spacing;
+  }
+}
+
+// *** Dimension Settings ***
+
+@mixin dimension-settings(
+  $width: null,
+  $max-width: null,
+  $height: null,
+  $min-height: null
+) {
+  @if $width {
+    width: $width;
+  }
+
+  @if $max-width {
+    max-width: $max-width;
+  }
+  @if $height {
+    height: $height;
+  }
+  @if $min-height {
+    min-height: $min-height;
+  }
+}
