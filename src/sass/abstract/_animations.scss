@@ -1,0 +1,9 @@
+// *** Fade In Disclaimer ***
+@keyframes fade-in {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -99999;
+  }
+}
+// *** End of Fade In Disclaimer ***
