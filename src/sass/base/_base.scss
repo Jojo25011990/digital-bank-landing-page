@@ -29,6 +29,10 @@ body {
 
   @include flex-settings(null, null, column);
   @include dimension-settings(100%, 144rem);
+
+  @media (max-width: 500px) {
+    margin: 0 auto;
+  }
 }
 // *** End of Container ***
 
