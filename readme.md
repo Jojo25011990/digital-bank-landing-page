@@ -1,6 +1,6 @@
-# Frontend Mentor - Easybank landing page solution
+# Frontend Mentor - Digital Bank landing page solution
 
-This is a solution to the [Easybank landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/easybank-landing-page-WaUhkoDN). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [Digital Bank landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/easybank-landing-page-WaUhkoDN). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github](https://github.com/Jojo25011990/easybank-landing-page)
-- Live Site URL: [Github Pages](https://jojo25011990.github.io/easybank-landing-page)
+- Solution URL: [Github](https://github.com/Jojo25011990/digital-bank-landing-page)
+- Live Site URL: [Github Pages](https://jojo25011990.github.io/digital-bank-landing-page)
 
 ## My process
 
